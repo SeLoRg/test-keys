@@ -1,0 +1,52 @@
+[tool.poetry]
+name = "cameramapservice"
+version = "0.1.0"
+description = ""
+authors = ["Ros"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.12,<4.0"
+fastapi = "^0.118.0"
+pydantic = "^2.11.9"
+pydantic-settings = "^2.11.0"
+sqlalchemy = "^2.0.43"
+alembic = "^1.16.5"
+asyncpg = "^0.30.0"
+uvicorn = "^0.37.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = ">=0.13.0,<0.14.0"
+black = ">=25.1.0,<26.0.0"
+pytest = ">=8.4.2,<9.0.0"
+alembic = ">=1.16.5,<2.0.0"
+pre-commit = "^4.3.0"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+extend-select = ["E", "F", "W"]
+ignore = [
+    "E501",  # длина строки
+    "E401",  # несколько импортов в одной строке
+    "E402",  # импорт вне верхнего уровня
+    "I001",  # порядок импортов
+]
+
+[tool.ruff.lint.isort]
+known-first-party = []
+combine-as-imports = false
+force-sort-within-sections = false
