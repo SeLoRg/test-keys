@@ -24,9 +24,6 @@ POSTGRES_PORT=5432
 docker compose build
 ```
 
-теперь сервис доступен по адрессу `localhost:9092`
-
-чтобы получить документацию перейдите по адрессу `localhost:9092/api/docs`
 
 ## 3. Применение миграций Alembic
 
@@ -39,6 +36,10 @@ docker compose run --rm main_alembic upgrade head
 ```bash
 docker compose up
 ```
+
+теперь сервис доступен по адрессу `localhost:9092`
+
+чтобы получить документацию перейдите по адрессу `localhost:9092/api/docs`
 
 ## 5. Пример эндпоинтов
 
